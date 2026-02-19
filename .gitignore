@@ -1,2 +1,5 @@
 # mdbook build output
 book/
+
+# mdbook binary (if downloaded locally)
+mdbook
