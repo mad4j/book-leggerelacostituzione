@@ -38,6 +38,12 @@ cargo install mdbook
 
 ## Utilizzo
 
+### Visualizzare il libro online
+
+Il libro è automaticamente pubblicato come sito statico su GitHub Pages quando vengono effettuate modifiche sul branch principale. Il sito è disponibile all'indirizzo:
+
+`https://mad4j.github.io/book-leggerelacostituzione/`
+
 ### Costruire il libro
 
 ```bash
@@ -64,6 +70,9 @@ mdbook test
 
 ```
 .
+├── .github/
+│   └── workflows/
+│       └── deploy.yml  # GitHub Actions per pubblicazione automatica
 ├── book/           # Output HTML generato (non versionato)
 ├── src/            # Sorgenti markdown del libro
 │   ├── SUMMARY.md  # Indice del libro
@@ -75,6 +84,16 @@ mdbook test
 ├── book.toml       # Configurazione mdBook
 └── README.md       # Questo file
 ```
+
+## Pubblicazione automatica
+
+Il libro viene automaticamente costruito e pubblicato su GitHub Pages tramite GitHub Actions ogni volta che vengono effettuate modifiche sul branch `main`. Il workflow:
+
+1. Installa mdBook
+2. Costruisce il libro generando i file HTML
+3. Pubblica il risultato su GitHub Pages
+
+Per visualizzare il workflow, vedere il file `.github/workflows/deploy.yml`.
 
 ## Contribuire
 
